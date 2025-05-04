@@ -2,256 +2,271 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Food Delivery Website</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
-    <!-- Hover CSS -->
-    <link rel="stylesheet" href="css/hover-min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>Admin Dashboard | Delicious Eats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin-style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <!-- Navigation Section Start -->
-    <header class="navbar">
-        <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
-            <div class="container">
-                <!-- logo -->
-                <div class="logo">
-                    <a href="index.html" title="Logo">
-                        <img src="img/logo.png" alt="Logo" class="img-responsive">
-                    </a>
-                </div>
-                <!-- Main Menu -->
-                <div class="menu text-right">
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="index.html">Home</a></li>
-                        <li><a class="hvr-underline-from-center" href="categories.html">Categories</a></li>
-                        <li><a class="hvr-underline-from-center" href="foods.html">Foods</a></li>
-                        <li><a class="hvr-underline-from-center" href="order.html">Order</a></li>
-                        <li><a class="hvr-underline-from-center" href="contact.html">Contact</a></li>
-                        <li><a class="hvr-underline-from-center" href="login.html">Login</a></li>
-                        <li>
-                            <a id="shopping-cart" class="shopping-cart">
-                                <i class="fa fa-cart-arrow-down"></i>
-                                <span class="badge">0</span>
-                            </a>
-                            <div id="cart-content" class="cart-content">
-                                <h3 class="text-center">Shopping Cart</h3>
-                                <table class="cart-table" border="0">
-                                    <tr>
-                                        <th>Food</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Qty</th>
-                                        <th>Total</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    <!-- Cart items will be dynamically added here -->
-                                </table>
-                                <a href="order.html" class="btn-primary">Confirm Order</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <h2>
+                    <img src="../img/logo_1.jpg" alt="Logo">
+                    Delicious Eats Admin
+                </h2>
             </div>
-        </nav>
-    </header>
-    <!-- Navigation Section End -->
-
-    <!-- Food Search Section Start -->
-    <section class="food-search text-center" >
-        <div class="container">
-            <form action="food-search.html">
-                <input type="search" placeholder="Search for food..." required>
-                <input type="submit" value="Search" class="btn-primary">
-            </form>
-        </div>
-    </section>
-    <!-- Food Search Section End -->
-
-    <!-- Category Section Start -->
-    <section class="categories">
-        <div class="container">
-            <h2 class="text-center">Explore Foods</h2>
-            <div class="heading-border"></div>
-
-            <div class="grid-3">
-                <a href="category-foods.html">
-                    <div class="float-container">
-                        <img src="img/category/food.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Food</h3>
-                    </div>
+            <nav class="admin-nav">
+                <a href="index.html" class="admin-nav-item active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
                 </a>
-                <a href="category-foods.html">
-                    <div class="float-container">
-                        <img src="img/category/soup.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Soup</h3>
-                    </div>
+                <a href="orders.html" class="admin-nav-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    Orders
                 </a>
-                <a href="category-foods.html">
-                    <div class="float-container">
-                        <img src="img/category/drink.jpg" class="img-responsive" alt="">
-                        <h3 class="float-text text-white">Drink</h3>
-                    </div>
+                <a href="contacts.html" class="admin-nav-item">
+                    <i class="fas fa-envelope"></i>
+                    Contacts
                 </a>
-            </div>
-        </div>
-    </section>
-    <!-- Category Section End -->
+                <a href="logins.html" class="admin-nav-item">
+                    <i class="fas fa-user"></i>
+                    Logins
+                </a>
+                <a href="users.html" class="admin-nav-item">
+                    <i class="fas fa-users"></i>
+                    Registered User
+                </a>
+                <a href="../index.html" class="admin-nav-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Back to Site
+                </a>
+            </nav>
+        </aside>
 
-    <!-- Foods Section Start -->
-    <section class="food-menu">
-        <div class="container">
-            <h2 class="text-center">Food Menu</h2>
-            <div class="heading-border"></div>
-            <div class="grid-2">
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/f1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>បាយស្រូប</h4>
-                            <p class="food-price">$1.25</p>
-                            <p class="food-details">បាយសាច់ជ្រូកពងទាចៀន</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Dashboard Overview</h1>
+                <div class="admin-user">
+                    <img src="../img/team/m1.jpg" alt="Admin User">
+                    <span>Admin User</span>
                 </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/f2.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>បាយម្រះព្រូវ</h4>
-                            <p class="food-price">$1.50</p>
-                            <p class="food-details">បាយឆារម្រះព្រូវ with ពងទាចៀន</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/s1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>ហ្វឺ</h4>
-                            <p class="food-price">$2.50</p>
-                            <p class="food-details">ហ្វឺប្រហិតសាច់គោ</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/s2.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>គុយទាវ</h4>
-                            <p class="food-price">$2.50</p>
-                            <p class="food-details">គុយទាវប្រហិតសាច់គោ</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/d1.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>កាហ្វេ</h4>
-                            <p class="food-price">$1.00</p>
-                            <p class="food-details">កាហ្វេទឹកដោះគោទឹកកក(សាកថ្មបាន)</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-                <div class="food-menu-box">
-                    <form action="">
-                        <div class="food-menu-img">
-                            <img src="img/food/d2.jpg" alt="" class="img-responsive img-curve">
-                        </div>
-                        <div class="food-menu-desc">
-                            <h4>Milk Tea</h4>
-                            <p class="food-price">$2.00</p>
-                            <p class="food-details">តែចិន Olong Tea with sweat steam milk and Boba</p>
-                            <input type="number" value="1" min="1">
-                            <input type="submit" class="btn-primary" value="Add To Cart">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <p class="text-center">
-            <a href="foods.html" class="btn-primary">See All Foods</a>
-        </p>
-    </section>
-    <!-- Foods Section End -->
+            </header>
 
-    <!-- Footer Section Start -->
-    <section class="footer">
-        <div class="container">
-            <div class="grid-3">
-                <div class="text-center">
-                    <h3>About Us</h3><br>
-                    <p>This is a frontend project about Food ordering system in which we are working with to improve customer service and improve sell of the resterant And to promote Khmer/Asian cuisine((✿◡‿◡))</p>
-                </div>
-                <div class="texr-center">
-                    <h3>Site Map</h3><br>
-                    <div class="site-links">
-                        <a href="categories.html">Categories</a>
-                        <a href="foods.html">Foods</a>
-                        <a href="order.html">Order</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="login.html">Login</a>
+            <!-- Dashboard Cards -->
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-value" id="total-orders">0</div>
+                            <div class="card-title">Total Orders</div>
+                        </div>
+                        <div class="card-icon orders">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="social-links">
-                    <h3>Social Links</h3><br>
-                    <div class="social">
-                        <ul>
-                            <li><a href="https://youtube.com/@codearcade-se4rc?si=2vBakC9_9-q3AL0y"><img src="https://img.icons8.com/color/48/null/facebook-new.png"/></a></li>
-                            <li><a href="https://youtube.com/@codearcade-se4rc?si=2vBakC9_9-q3AL0y"><img src="https://img.icons8.com/fluency/48/null/instagram-new.png"/></a></li>
-                            <li><a href="https://youtube.com/@codearcade-se4rc?si=2vBakC9_9-q3AL0y"><img src="https://img.icons8.com/color/48/null/twitter--v1.png"/></a></li>
-                            <li><a href="https://youtube.com/@codearcade-se4rc?si=2vBakC9_9-q3AL0y"><img src="https://img.icons8.com/color/48/null/linkedin-circled--v1.png"/></a></li>
-                            <li><a href="https://youtube.com/@codearcade-se4rc?si=2vBakC9_9-q3AL0y"><img src="https://img.icons8.com/color/48/null/youtube-play.png"/></a></li>
-                        </ul>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-value" id="pending-orders">0</div>
+                            <div class="card-title">Pending Orders</div>
+                        </div>
+                        <div class="card-icon orders">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-value" id="total-contacts">0</div>
+                            <div class="card-title">Customer Messages</div>
+                        </div>
+                        <div class="card-icon contacts">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-value" id="total-logins">0</div>
+                            <div class="card-title">User Logins</div>
+                        </div>
+                        <div class="card-icon logins">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-value" id="net-sales">$0.00</div>
+                            <div class="card-title">Net Sales</div>
+                        </div>
+                        <div class="card-icon sales">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Footer Section End -->
 
-    <!-- Copyright Section start -->
-    <section class="copyright">
-        <div class="container text-center">
-            <p>All rights reserved. Design By <a href="#">Group 3 - I4AMS</a></p>
-        </div>
-        <a id="back-to-top" class="btn-primary">
-            <i class="fa fa-angle-double-up"></i>
-        </a>
-    </section>
-    <!-- Copyright Section End -->
+            <!-- Charts Section -->
+            <div class="grid grid-2" style="gap: 30px; margin-bottom: 40px;">
+                <div class="chart-container">
+                    <h2>Top Selling Items</h2>
+                    <div id="topItemsChart-container">
+                      <canvas id="topItemsChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h2>Customer Spending</h2>
+                    <canvas id="customerSpendingChart"></canvas>
+                </div>
+            </div>
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <!-- Jquery UI -->
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+            <!-- Recent Orders -->
+            <div class="admin-table-container">
+                <h2>Recent Orders</h2>
+                <div class="table-responsive">
+                    <table class="admin-table" id="recent-orders">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Orders will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Recent Contacts -->
+            <div class="admin-table-container">
+                <h2>Recent Messages</h2>
+                <div class="table-responsive">
+                    <table class="admin-table" id="recent-contacts">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Contacts will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Order Details <span id="modal-order-id"></span></h2>
+                <button id="close-modal" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 20px;">
+                    <h3>Customer Information</h3>
+                    <div id="customer-info" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;"></div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h3>Order Items</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Item</th>
+                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Price</th>
+                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Qty</th>
+                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Total</th>
+                                <th style="text-align: left; padding: 8px; border-bottom: 1px solid #ddd;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="order-items-list"></tbody>
+                    </table>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                    <div>
+                        <strong>Order Notes:</strong>
+                        <p id="order-notes">No special instructions</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>Grand Total:</strong>
+                        <p id="order-grand-total">$0.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="complete-order">Mark as Completed</button>
+                <button class="btn btn-danger" id="cancel-order">Cancel Order</button>
+                <button class="btn btn-secondary" id="print-order">Print Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Details Modal -->
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Message Details</h2>
+                <button id="close-message-modal" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 15px;">
+                    <strong>From:</strong>
+                    <p id="message-from"></p>
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <strong>Subject:</strong>
+                    <p id="message-subject"></p>
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <strong>Message:</strong>
+                    <p id="message-content" style="white-space: pre-line; margin-top: 10px; padding: 10px; background: #f5f5f5; border-radius: 5px;"></p>
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <strong>Received:</strong>
+                    <p id="message-date"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="reply-message">
+                    <i class="fas fa-reply"></i> Reply
+                </button>
+                <button class="btn btn-danger" id="delete-message">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
 </body>
 </html>

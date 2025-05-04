@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Messages | Delicious Eats Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <h2>
+                    <img src="../img/logo_1.jpg" alt="Logo">
+                    Delicious Eats Admin
+                </h2>
+            </div>
+            <nav class="admin-nav">
+                <a href="index.html" class="admin-nav-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </a>
+                <a href="orders.html" class="admin-nav-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    Orders
+                </a>
+                <a href="contacts.html" class="admin-nav-item active">
+                    <i class="fas fa-envelope"></i>
+                    Contacts
+                </a>
+                <a href="logins.html" class="admin-nav-item">
+                    <i class="fas fa-user"></i>
+                    Logins
+                </a>
+                <a href="users.html" class="admin-nav-item">
+                    <i class="fas fa-users"></i>
+                    Registered User
+                </a>
+                <a href="../index.html" class="admin-nav-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Back to Site
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Customer Messages</h1>
+                <div class="admin-user">
+                    <img src="../img/team/m1.jpg" alt="Admin User">
+                    <span>Admin User</span>
+                </div>
+            </header>
+
+            <!-- Contacts Table -->
+            <div class="admin-table-container">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                    <div>
+                        <input type="text" id="search-contacts" placeholder="Search messages..." class="btn">
+                        <button class="btn btn-primary" id="search-contacts-btn">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="admin-table" id="contacts-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Subject</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Contacts will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                    <div>
+                        <span id="contacts-count">0</span> messages found
+                    </div>
+                    <div>
+                        <button class="btn btn-sm" id="prev-page-contacts">Previous</button>
+                        <span id="page-info-contacts">Page 1 of 1</span>
+                        <button class="btn btn-sm" id="next-page-contacts">Next</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Message Details Modal -->
+    <div id="message-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 20px; border-radius: 5px; max-width: 600px; width: 90%;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <h2>Message Details</h2>
+                <button id="close-message-modal" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <strong>From:</strong>
+                <p id="message-from"></p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <strong>Subject:</strong>
+                <p id="message-subject"></p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <strong>Message:</strong>
+                <p id="message-content" style="white-space: pre-line; margin-top: 10px; padding: 10px; background: #f5f5f5; border-radius: 5px;"></p>
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+                <strong>Received:</strong>
+                <p id="message-date"></p>
+            </div>
+            
+            <div style="margin-top: 20px; display: flex; gap: 10px;">
+                <button class="btn btn-primary" id="reply-message">
+                    <i class="fas fa-reply"></i> Reply
+                </button>
+                <button class="btn btn-danger" id="delete-message">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/contacts.js"></script>
+</body>
+</html>
