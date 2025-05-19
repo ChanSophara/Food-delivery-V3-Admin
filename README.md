@@ -1,2 +1,19 @@
-﻿# Food-delivery-Admin-system
-This is an Admin system to handle and manage data from Food delivery system to track and manage order and other feature from customer.
+# 🛠️ Food Delivery Admin Panel - V3
+
+## 📘 Project Overview
+Standalone admin dashboard for food delivery system, designed for real-time control and monitoring.
+
+## 🛠️ Tech Stack
+- HTML
+- CSS
+- JavaScript
+- Flask
+- MySQL
+
+## ✨ Features
+- Admin-only access
+- Live order transcript printing
+- Customer and sales metrics dashboard
+
+---
+🔗 Check it out on GitHub and explore the project in action!
